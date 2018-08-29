@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-
 class Login extends Component {
   constructor(props){
     super(props);
@@ -40,6 +39,8 @@ class Login extends Component {
           alert("Wrong password")
         } else if (res.data === "No email") {
           alert("Enter your email")
+        } else if (res.data === "Email not registered") {
+          alert("Email not registered")
         } else {
           console.log("You're logged in")
           element.email.value = null;
@@ -53,6 +54,7 @@ class Login extends Component {
           this.setState(() => ({
             redirectToHome: true
           }))
+          window.location.reload()
         }
       })
       .catch((res) => {

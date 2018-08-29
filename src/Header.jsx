@@ -12,6 +12,10 @@ class Header extends Component {
 
   }
 
+  componentDidMount() {
+    this.forceUpdate();
+  }
+
   handleSubmit() {
     axios.post(`http://localhost:8080/logout`, {
      headers: {'Content-Type': 'application/x-www-form-urlencoded' },
@@ -21,6 +25,7 @@ class Header extends Component {
       if (res.data === "Logged out") {
         alert("You are logged out!")
         localStorage.clear();
+        window.location.reload();
       } 
     })
     .catch((res) => {
