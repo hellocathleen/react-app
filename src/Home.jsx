@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReportList from './ReportList.jsx';
+import MyMapComponent from './MapContainer.jsx';
 import axios from 'axios';
+import MyFancyComponent from './MapContainer.jsx';
 
 class Home extends Component {
   constructor(props) {
@@ -24,6 +26,8 @@ class Home extends Component {
       <div>
         <h1>Hello World!</h1>
         <h2>Surf Forecast</h2>
+         <MyFancyComponent reports={ this.state.reports }/> 
+
         <ReportList reports={ this.state.reports } />
       </div>
     )
