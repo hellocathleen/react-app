@@ -17,7 +17,7 @@ const MyMapComponent = compose(
     defaultCenter={{ lat: 48.530889, lng: -124.466240 }}
   >
   {props.locations.map((location, i) => {
-  return <Marker key={i} position= {{ lat: Number(location.latitude), lng: Number(location.longitude) }}/> })}
+  return <Marker key={i} label={location.name} position= {{ lat: Number(location.latitude), lng: Number(location.longitude) }}/> })}
   </GoogleMap>
 )
 
