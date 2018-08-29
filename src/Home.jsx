@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReportList from './ReportList.jsx';
-import MyMapComponent from './MapContainer.jsx';
 import axios from 'axios';
 import MyFancyComponent from './MapContainer.jsx';
 
@@ -24,11 +23,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Hello World!</h1>
+        <div id="background">
+          <img src="public/images/bw2.png"></img>
+        </div>
+        <MyFancyComponent reports={ this.state.reports }/> 
         <h2>Surf Forecast</h2>
-         <MyFancyComponent reports={ this.state.reports }/> 
-
-        <ReportList reports={ this.state.reports } />
+          <ReportList reports={ this.state.reports } />
       </div>
     )
   }

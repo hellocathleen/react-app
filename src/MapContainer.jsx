@@ -6,12 +6,13 @@ const MyMapComponent = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div className="map" style={{ height: `400px`, width:`90%`}} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withScriptjs,
   withGoogleMap
 )((props) =>
+<div className="map">
   <GoogleMap
     defaultZoom={8}
     defaultCenter={{ lat: 48.530889, lng: -124.466240 }}
@@ -19,6 +20,7 @@ const MyMapComponent = compose(
   {props.locations.map((location, i) => {
   return <Marker key={i} label={location.name} position= {{ lat: Number(location.latitude), lng: Number(location.longitude) }}/> })}
   </GoogleMap>
+</div>  
 )
 
 class MyFancyComponent extends React.PureComponent {
