@@ -1,3 +1,17 @@
 h1 {
   color: tomato;
 }
+
+.report {
+  display: flex;
+}
+
+.beach-info {
+  flex: 1;
+}
+
+.beach-forecast {
+  flex: 5;
+  display: flex;
+  justify-content: space-evenly;
+}
