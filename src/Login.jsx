@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
-      currentUserId: null
-    };
+      
+    }
     this.loginUser = this.loginUser.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -29,7 +29,8 @@ class Login extends Component {
     }
     console.log(user)
     axios.post(`http://localhost:8080/login`, user, {
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        withCredentials: true
       })
       .then(res => {
         console.log("res.data:", res.data);

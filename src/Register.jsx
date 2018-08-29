@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 class Register extends Component {
   constructor(props){
     super(props);
@@ -11,7 +12,6 @@ class Register extends Component {
     };
     this.addUser = this.addUser.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
   }
 
   componentDidMount() {
@@ -26,11 +26,9 @@ class Register extends Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-    console.log("Target name:", name)
     this.setState({
       [name]: value
     });
-    
     console.log("STATE:", this.state)
   }
 
@@ -46,8 +44,7 @@ class Register extends Component {
       }
     }
     console.log("User's favorite beaches:", favBeaches)
-    
-    console.log(event.target.type === 'checkbox')
+
     const user = {first_name: element.first_name.value, 
                   last_name: element.last_name.value, 
                   email: element.email.value, 
@@ -57,10 +54,10 @@ class Register extends Component {
     console.log("User: ", user)
 
     axios.post(`http://localhost:8080/register`, user, {
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json'},
+      withCredentials: true
     })
     .then(res => {
-      console.log("Response:", res);
       console.log("res.data:", res.data);
       if (res.data === "Already registered") {
         alert("Email already registered!")
@@ -76,11 +73,13 @@ class Register extends Component {
         element.email.value = null;
         element.phone_number.value = null;
         element.password.value = null;
+        this.props.history.push("/");
       }
     })
     .catch((res) => {
       console.log("error", res);
     }); 
+    
   }
 
   render() {
@@ -100,7 +99,7 @@ class Register extends Component {
         <input id="password" type="password" name="password" onChange={this.handleChange} /><br/>
         <br/>
 
-        <label>Pick your favorite beaches:</label>
+        <label>Select your favorite beaches:</label>
             {this.state.beaches.map((beach) => {
               return <div key={beach.id}><input type="checkbox" className="checks" name={beach.name} onChange={this.handleChange} /><label>{beach.name}</label></div>
                 })}
