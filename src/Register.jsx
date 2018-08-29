@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 
 class Register extends Component {
@@ -8,7 +9,7 @@ class Register extends Component {
     this.state = {
       beaches: [],
       favBeaches: [],
-      currentUserId: null
+      redirectToHome: false
     };
     this.addUser = this.addUser.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -64,16 +65,21 @@ class Register extends Component {
       } else if (res.data === "Fill out all the forms!") {
         alert("Fill out all the forms!")
       } else {
-        this.setState({
-          currentUserId: res.data
-        })
+        const name = res.data[0].first_name
+        const id = res.data[0].id
+        const email = res.data[0].email
+        localStorage.setItem('name', name);
+        localStorage.setItem('id', id)
+        localStorage.setItem('email', email)
         console.log("STATE:", this.state)
         element.first_name.value = null;
         element.last_name.value = null;
         element.email.value = null;
         element.phone_number.value = null;
         element.password.value = null;
-        this.props.history.push("/");
+        this.setState(() => ({
+          redirectToHome: true
+        }))
       }
     })
     .catch((res) => {
@@ -83,6 +89,9 @@ class Register extends Component {
   }
 
   render() {
+    if (this.state.redirectToHome === true) {
+      return <Redirect to='/' />
+    }
     return (
       <div>
       <h1>Register</h1>
