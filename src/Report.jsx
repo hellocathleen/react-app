@@ -4,8 +4,9 @@ import DailyForecast from './DailyForecast.jsx';
 class Report extends Component {
   render() {
     const report = this.props.report;
+    const fiveDayForecast = report.stormglass.slice(0, 5);
 
-    const forecast = report.stormglass.map((obj, i) => {
+    const forecast = fiveDayForecast.map((obj, i) => {
       const timestamp = Object.keys(obj)[0];
       const surfData = obj[timestamp];
 
