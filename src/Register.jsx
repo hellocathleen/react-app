@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
-=======
-import { Redirect } from 'react-router-dom';
->>>>>>> 3cba552c79362ebc8f058dbbbf8136663601c39b
 
 
 class Register extends Component {
