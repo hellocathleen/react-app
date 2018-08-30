@@ -27,12 +27,15 @@ class Header extends Component {
     return (
       <header>
           <nav>
-            <h2><Link to='/'>Surf Buddy</Link></h2>
-            <ul>
-              <li><Link to='/login'>Login</Link></li>
-              <li><Link to='/register'>Register</Link></li>
-              <button type="submit" onClick={this.handleSubmit}>Logout</button>
+          <ul>
+            <div>
+            <Link className="login" to='/login'>Login</Link>
+            <Link className="register" to='/register'>Register</Link>
+            <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
+
+            </div>
             </ul>
+              <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
           </nav>
         </header>
     )
