@@ -53,15 +53,23 @@ class Login extends Component {
   render() {
     return (
       <div>
-      <h1>Login</h1>
+        <div className='login-container'>
+          <img src="public/images/wave.png"></img>
+
+      <div className="login-form">
         <form onSubmit={this.loginUser} action="/login" method="POST">
-          <label htmlFor="email">Email:</label>
-          <input id="email" type="email" name="email" onChange={this.handleChange} /><br/>
-          <label htmlFor="password">Password:</label>
-          <input id="password" type="password" name="password" onChange={this.handleChange} /><br/>
-          <input type="submit" value="Submit" />
+          <label htmlFor="email"></label>
+          <input id="email" type="email" name="email" placeholder="Email" onChange={this.handleChange} /><br/>
+          <label htmlFor="password"></label>
+          <input id="password" type="password" placeholder="Password" name="password" onChange={this.handleChange} /><br/>
+          <input id="login-input" type="submit" value="Log in" />
+          <p>Don't have an account?</p><br/>
+          <a id="register" href="/register">Register</a>
         </form>
+        </div>
       </div>
+    </div>
+      
     );
   }
 }

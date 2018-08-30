@@ -14,41 +14,26 @@ letter-spacing: 0.063em;
 
 }
 
-.login {
-  position: absolute;
-  right: 10%;
-  color: #666;
+.login, .register, .logout {
+  float:right;
   text-decoration: none;
   font-family: $font;
-  border: 1px solid #d3d3d3;
-  border-radius: .25rem;
-  background-color: white;
-  padding: 10px
-}
+  text-align: center;
+  background-color: transparent;
+  border-width: 1.5px;
+  border-style: solid;
+  color: white;
+  border-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+  letter-spacing: 0.069em;
+  width: 85px;
 
-.logout {
-  position: absolute;
-  right: 20%;
-  color: #666;
-  text-decoration: none;
-  font-family: $font;
-  border: 1px solid #d3d3d3;
-  border-radius: .25rem;
-  background-color: white;
-  padding: 10px
-}
-
-.register {
-  position: absolute;
-  right: 1%;
-  color: #666;
-  text-decoration: none;
-  font-family: $font;
-  border: 1px solid #d3d3d3;
-  border-radius: .25rem;
-  background-color: white;
-  padding: 10px
-
+  &:hover {
+    background-color: white;
+    color: #f6dbbc;
+  }
 }
 
   .circle {
