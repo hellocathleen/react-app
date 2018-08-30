@@ -27,13 +27,17 @@ class UserProfile extends Component {
     }).catch((res) => {
       console.log("error", res);
     }); 
-    axios.get(`http://localhost:8080/api/beaches`)
-      .then((res) => {
-        const beaches = res.data;
-        this.setState({ beaches });
-      }).catch((res) => {
-        console.log("error", res);
-      });
+    axios.get(`http://localhost:8080/api/user/beaches`, {
+    withCredentials: true })
+    .then((res) => {
+      console.log(res)
+      const beaches = res.data;
+      this.setState({ beaches });
+    }).catch((res) => {
+      console.log("error", res);
+    });
+
+
   }
 
   deleteBeach(event) {
@@ -56,8 +60,17 @@ class UserProfile extends Component {
        .catch((res) => {
          console.log("error", res);
        }); 
-    })
 
+       axios.get(`http://localhost:8080/api/user/beaches`, {
+        withCredentials: true })
+        .then((res) => {
+          console.log(res)
+          const beaches = res.data;
+          this.setState({ beaches });
+        }).catch((res) => {
+          console.log("error", res);
+        });
+    })
   }
   addBeaches(event) {
     event.preventDefault();
@@ -77,7 +90,6 @@ class UserProfile extends Component {
       if (results.data.includes("You already favorited")){
         alert(results.data)
       } else {
-        console.log("Something")
         axios.get(`http://localhost:8080/user/${this.state.id}`, {
           headers: {'Content-Type': 'application/json' },
            withCredentials: true
@@ -89,6 +101,15 @@ class UserProfile extends Component {
          }).catch((res) => {
            console.log("error", res);
          })
+         axios.get(`http://localhost:8080/api/user/beaches`, {
+          withCredentials: true })
+          .then((res) => {
+            console.log(res)
+            const beaches = res.data;
+            this.setState({ beaches });
+          }).catch((res) => {
+            console.log("error", res);
+          });
       }
     }).catch((res) => {
       console.log("error", res);
@@ -111,8 +132,8 @@ class UserProfile extends Component {
                 })}
           <br/>
           <label>Add more favorite beaches:</label>
-            {this.state.beaches.map((beach) => {
-                return <div key={beach.id}><input type="checkbox" className="checks" name={beach.name} /><label>{beach.name}</label></div>
+            {this.state.beaches.map((beach, index) => {
+                return <div key={index}><input type="checkbox" className="checks" name={beach} /><label>{beach}</label></div>
               })}
           <br/>
           <button type="submit" onClick={this.addBeaches}>Submit</button>
