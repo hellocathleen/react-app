@@ -86,3 +86,21 @@ padding-bottom: 60px;
 .circle:hover .notification-hidden {
   display: block;
 }
+
+#down:hover .down-hidden {
+  display: block;
+}
+
+.down-hidden {
+  position: absolute;
+  right: 38%;
+  top: 80%;
+  color: #666;
+  font-family: $font;
+  border: 1px solid #d3d3d3;
+  border-radius: .25rem;
+  background-color: white;
+  padding: 10px;
+  display:none;
+
+}
