@@ -30,24 +30,29 @@ class Header extends Component {
 
   render() {
     let greeting;
+    let profileLink;
+    let loginLink;
+    const userId = localStorage.getItem('id')
     if (this.state.name) {
       greeting = <h2>Hey, {this.state.name}. Ready to hit the waves? </h2>
+      profileLink = <Link className="profile" to={`/user/${userId}`}>Profile</Link>
+      loginLink = <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
     }
-    const userId = localStorage.getItem('id')
+    if (!this.state.name) {
+      loginLink = <div><Link className="login" to='/login'>Login</Link>
+                  <Link className="register" to='/register'>Register</Link></div>
+    }
     return (
       <header>
           <nav>
-          <ul>
             <div>
-            <Link className="login" to='/login'>Login</Link>
-            <Link className="register" to='/register'>Register</Link>
-            <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
+            {loginLink}
             {greeting}
+            {profileLink}
             </div>
-            </ul>
-              <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
+            <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
           </nav>
-        </header>
+      </header>
     )
   }
 }

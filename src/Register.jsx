@@ -86,7 +86,6 @@ class Register extends Component {
     .catch((res) => {
       console.log("error", res);
     }); 
-    
   }
 
   render() {
