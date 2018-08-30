@@ -1,7 +1,7 @@
 $font: 'Nunito Sans', sans-serif;
 
 nav {
-  height: 700px;
+  height: 200px;
 }
 
 .title {
@@ -17,6 +17,18 @@ letter-spacing: 0.063em;
 .login {
   position: absolute;
   right: 10%;
+  color: #666;
+  text-decoration: none;
+  font-family: $font;
+  border: 1px solid #d3d3d3;
+  border-radius: .25rem;
+  background-color: white;
+  padding: 10px
+}
+
+.logout {
+  position: absolute;
+  right: 20%;
   color: #666;
   text-decoration: none;
   font-family: $font;
@@ -60,6 +72,7 @@ letter-spacing: 0.063em;
 
 .container {
 padding: 20px;
+padding-bottom: 60px;
 }
 
 .notification-hidden {

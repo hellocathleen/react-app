@@ -1,46 +1,44 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const Header = () => (
-  <header>
+class Header extends Component {
+  constructor(props){
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
 
-    <nav>      
-      <ul>
-        <div><Link className="login" to='/login'>Login</Link>
-        <Link className="register" to='/register'>Register</Link></div>
-      </ul>
-    <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
+  handleSubmit() {
+    axios.post(`http://localhost:8080/logout`, {
+     headers: {'Content-Type': 'application/x-www-form-urlencoded' },
+      withCredentials: true
+    }).then(res => {
+      console.log("res.data:", res.data);
+      if (res.data === "Logged out") {
+        alert("You are logged out!")
+      } 
+    })
+    .catch((res) => {
+      console.log("error", res);
+    }); 
+  }
 
-      <div className="container">
-        <div className="circle" id="bell-circle">
-          <img id="icon" src="public/images/bell.png"/>
-          <span className="notification-hidden">
-          Activate Surf Alarms and get notifications 
-          when the conditions will be just the way 
-          you like them at your favorite spots.</span>
-        </div>
-        <div className="circle" id="wave-circle">
-          <img id="icon" src="public/images/waves.png"/>
-          <span className="notification-hidden">
-          Compare multiple surf forecasts and increase the 
-          chance to be at the right spot at the right time. 
-          Find frequently updated forecasts with wind direction 
-          and height, wave height and period. We've also included 
-          a rating system for those new to reading forecasts.
-          Have we missed 
-          your favorite forecast source? Let us know!</span>
-        </div>
-        <div className="circle" id="avatar-circle">
-          <img id="icon" src="public/images/avatar.png"/>
-          <span className="notification-hidden">
-          Add your own personal preferences to get forecasts and set 
-          up Surf Alarms when you want.</span>
-        </div>
-      </div>
+  render() {
+    return (
+      <header>
+          <nav>
+          <ul>
+            <div><Link className="login" to='/login'>Login</Link>
+            <Link className="register" to='/register'>Register</Link>
+            <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
 
-    </nav>
-
-  </header>
-)
+            </div>
+            </ul>
+              <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
+          </nav>
+        </header>
+    )
+  }
+}
 
 export default Header;
