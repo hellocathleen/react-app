@@ -53,9 +53,13 @@ class Home extends Component {
               <span className="notification-hidden">
               Add your own personal preferences to get forecasts and set 
               up Surf Alarms when you want.</span>
-            </div>
+            </div> 
+            <a id="down" href="#forecast">
+            <span className="down-hidden">
+              Checkout today's forecast</span>
+          <img id="icon-down" src="public/images/down-arrow.png"/></a>
           </div>
-
+        <a name="forecast"></a>
         <MyFancyComponent reports={ this.state.reports }/> 
         <h2>Surf Forecast</h2>
           <ReportList reports={ this.state.reports } />
