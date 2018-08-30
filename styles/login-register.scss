@@ -23,10 +23,11 @@
 }
 
 .login-form {
-  width: auto;
+  width: max-content;
   height: auto;
-  margin: 25%;
+  margin: auto;
   padding: 10px;
+  padding-top: 40%;
   position: relative;
 }
 
@@ -99,7 +100,7 @@
 
 }
 
-.register-info {
+.info {
   font-family: $font;
   position: fixed;
   top: 10%;
@@ -134,3 +135,4 @@
     color: #133452
   }
 }
+

@@ -111,7 +111,7 @@ class Register extends Component {
               <button id="register" type="submit">Register</button>
           </form>
         </div>
-        <div className="register-info">
+        <div className="info">
           <p>Register with Point Break</p>
           <p>Getting starter is easy. Fill in our 
             register<br/> form and select the beach you 
