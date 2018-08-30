@@ -38,3 +38,44 @@ letter-spacing: 0.063em;
   padding: 10px
 
 }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    margin: 20px 10px 50px 10px;
+    background: #f6dbbc;
+}
+
+#icon {
+  height: 2em;
+  width:2em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: .5;
+}
+
+.container {
+padding: 20px;
+}
+
+.notification-hidden {
+  position: absolute;
+  right: 25%;
+  color: #666;
+  font-family: $font;
+  border: 1px solid #d3d3d3;
+  border-radius: .25rem;
+  background-color: white;
+  padding: 10px;
+  display:none;
+  margin-left: 20%;
+
+}
+
+.circle:hover .notification-hidden {
+  display: block;
+}
