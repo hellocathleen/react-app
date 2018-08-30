@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header.jsx';
 import ReportList from './ReportList.jsx';
 import axios from 'axios';
 import MyFancyComponent from './MapContainer.jsx';
@@ -23,6 +24,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+      <Header />
         <div id="background">
           <img src="public/images/bw2.png"></img>
         </div>

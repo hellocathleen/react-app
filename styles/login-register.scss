@@ -1,0 +1,136 @@
+.login-container {
+  text-align: center;
+  color: white;
+  font-family: $font;
+}
+
+
+#password, #email, #first_name, #last_name, #phone {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  color: white;
+  padding: 9px;
+  letter-spacing: 0.069em;
+
+}
+
+::placeholder { 
+  color: white;
+  
+}
+
+.login-form {
+  width: auto;
+  height: auto;
+  margin: 25%;
+  padding: 10px;
+  position: relative;
+}
+
+#login-input {
+  background-color: transparent;
+  border-width: 1.5px;
+  border-style: solid;
+  color: white;
+  border-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+  letter-spacing: 0.069em;
+  width: 90px;
+
+  &:hover {
+    background: white;
+    color: #133452
+  }
+}
+
+#register {
+  background-color: transparent;
+  border-width: 1.5px;
+  border-style: solid;
+  color: white;
+  border-color: white;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  margin: 20px;
+  letter-spacing: 0.069em;
+  width: 85px;
+  text-decoration: none;
+  font-size: 12px;
+
+  &:hover {
+    background: white;
+    color: #133452
+  }
+}
+
+
+.login-register-container {
+  font-family: $font;
+  position: fixed;
+  top: 10%;
+  right: 50%;
+  border-width: 1px;
+  background: rgba(255, 254, 254, 0.5);
+  width: 400px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  height:600px
+
+
+}
+
+#background-register {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+
+}
+
+.register-info {
+  font-family: $font;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  width: 500px;
+  text-align: center;
+  color: white;
+  padding-top: 60px;
+}
+
+#login-link {
+  position: absolute;
+  right: 170px;
+}
+
+#link {
+  background-color: transparent;
+  border-width: 1.5px;
+  border-style: solid;
+  color: white;
+  border-color: white;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  margin: 20px;
+  letter-spacing: 0.069em;
+  width: 85px;
+  text-decoration: none;
+  font-size: 12px;
+
+  &:hover {
+    background: white;
+    color: #133452
+  }
+}
