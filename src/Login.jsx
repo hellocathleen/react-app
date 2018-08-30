@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
-      
+      redirectToHome: false
     }
     this.loginUser = this.loginUser.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -20,7 +19,6 @@ class Login extends Component {
     this.setState({
       [name]: value
     });
-    console.log("STATE:", this.state)
   }
 
   loginUser(event) {
@@ -40,11 +38,22 @@ class Login extends Component {
           alert("Wrong password")
         } else if (res.data === "No email") {
           alert("Enter your email")
+        } else if (res.data === "Email not registered") {
+          alert("Email not registered")
         } else {
           console.log("You're logged in")
           element.email.value = null;
           element.password.value = null;
-          this.props.history.push("/");
+          const name = res.data[0].first_name
+          const id = res.data[0].id
+          const email = res.data[0].email
+          localStorage.setItem('name', name);
+          localStorage.setItem('id', id)
+          localStorage.setItem('email', email)
+          this.setState(() => ({
+            redirectToHome: true
+          }))
+          window.location.reload()
         }
       })
       .catch((res) => {
@@ -53,6 +62,9 @@ class Login extends Component {
     
   }
   render() {
+    if (this.state.redirectToHome === true) {
+      return <Redirect to='/' />
+    }
     return (
       <div>
         <img id="background" src="public/images/wave.png"></img>
