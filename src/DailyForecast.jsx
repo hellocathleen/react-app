@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import WaveIcon from './WaveIcon.jsx';
+import WindIcon from './WindIcon.jsx';
 
 class DailyForecast extends Component {
   render() {
@@ -10,8 +12,8 @@ class DailyForecast extends Component {
     return (
       <div className='daily-forecast'>
         <h4>{ weekday }</h4>
-        <p>Wave: { surfData.waveHeight } m | { surfData.wavePeriod } s</p>
-        <p>Wind: { surfData.windSpeed } km/h | { surfData.windDirection }°</p>
+        <p><WaveIcon /> { surfData.waveHeight } m &nbsp;&nbsp; { Math.round(surfData.wavePeriod) } s</p>
+        <p><WindIcon /> { Math.round(surfData.windSpeed) } km/h &nbsp; { surfData.windDirection }°</p>
         <p>Rating: { surfData.surfRating } / 5</p>
       </div>
     );
