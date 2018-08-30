@@ -5,6 +5,9 @@ import axios from 'axios';
 class Header extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      name: localStorage.getItem('name')
+    }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
@@ -16,6 +19,10 @@ class Header extends Component {
       console.log("res.data:", res.data);
       if (res.data === "Logged out") {
         alert("You are logged out!")
+        localStorage.clear();
+        this.setState({
+          name: null
+        })
       } 
     })
     .catch((res) => {
@@ -24,20 +31,32 @@ class Header extends Component {
   }
 
   render() {
+    let greeting;
+    let profileLink;
+    let loginLink;
+    let registerLink;
+    const userId = localStorage.getItem('id')
+    if (this.state.name) {
+      greeting = <h2>Hey, {this.state.name}. Ready to hit the waves? </h2>
+      profileLink = <Link className="profile" to={`/user/${userId}`}>Profile</Link>
+      loginLink = <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
+    }
+    if (!this.state.name) {
+      loginLink = <Link className="login" to='/login'>Log in</Link>
+      registerLink = <Link className="register" to='/register'>Register</Link>
+    }
     return (
       <header>
           <nav>
-          <ul>
             <div>
-            <Link className="login" to='/login'>Log in</Link>
-            <Link className="register" to='/register'>Register</Link>
-            <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
-
+            {loginLink}
+            {registerLink}
+            {profileLink}
             </div>
-            </ul>
-              <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
+            {greeting}
+            <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
           </nav>
-        </header>
+      </header>
     )
   }
 }
