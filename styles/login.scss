@@ -39,8 +39,12 @@
   padding: 10px;
   margin: 20px;
   letter-spacing: 0.069em;
-  width: 85px;
+  width: 90px;
 
+  &:hover {
+    background: white;
+    color: #133452
+  }
 }
 
 #register {
@@ -49,9 +53,18 @@
   border-style: solid;
   color: white;
   border-color: white;
-  border-radius: 15px;
-  padding: 10px;
-  margin: 10px;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  margin: 20px;
   letter-spacing: 0.069em;
+  width: 85px;
+  text-decoration: none;
+  font-size: 12px;
+
+  &:hover {
+    background: white;
+    color: #133452
+  }
 }
+
 
