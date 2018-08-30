@@ -1,0 +1,70 @@
+.login-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: $font;
+}
+
+.login-form {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+
+#password, #email {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  color: white;
+  padding: 9px;
+  letter-spacing: 0.069em;
+
+}
+
+::placeholder { 
+  color: white;
+  
+}
+
+#login-input {
+  background-color: transparent;
+  border-width: 1.5px;
+  border-style: solid;
+  color: white;
+  border-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+  letter-spacing: 0.069em;
+  width: 90px;
+
+  &:hover {
+    background: white;
+    color: #133452
+  }
+}
+
+#register {
+  background-color: transparent;
+  border-width: 1.5px;
+  border-style: solid;
+  color: white;
+  border-color: white;
+  border-radius: 20px;
+  padding: 10px 20px 10px 20px;
+  margin: 20px;
+  letter-spacing: 0.069em;
+  width: 85px;
+  text-decoration: none;
+  font-size: 12px;
+
+  &:hover {
+    background: white;
+    color: #133452
+  }
+}
+
+
