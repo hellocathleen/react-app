@@ -42,7 +42,7 @@ letter-spacing: 0.063em;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    margin: 20px 10px 50px 10px;
+    margin: 20px 10px 45px 10px;
     background: #f6dbbc;
 }
 
@@ -53,6 +53,15 @@ letter-spacing: 0.063em;
   margin-left: auto;
   margin-right: auto;
   opacity: .5;
+}
+
+#icon-down {
+  height: 4em;
+  width:4em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
 }
 
 .container {
