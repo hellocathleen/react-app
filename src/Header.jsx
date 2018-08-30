@@ -12,9 +12,6 @@ class Header extends Component {
 
   }
 
-  componentDidMount() {
-    this.forceUpdate();
-  }
 
   handleSubmit() {
     axios.post(`http://localhost:8080/logout`, {
@@ -36,8 +33,9 @@ class Header extends Component {
   render() {
     let greeting;
     if (this.state.name) {
-      greeting = <h2>Welcome, {this.state.name} </h2>
+      greeting = <h2>Hey, {this.state.name}. Ready to hit the waves? </h2>
     }
+    const userId = localStorage.getItem('id')
     return (
       <header>
           <nav>
@@ -45,6 +43,7 @@ class Header extends Component {
             <ul>
               <li><Link to='/login'>Login</Link></li>
               <li><Link to='/register'>Register</Link></li>
+              <li><Link to={`/user/${userId}`}>Profile</Link></li>
               <button type="submit" onClick={this.handleSubmit}>Logout</button>
               {greeting}
             </ul>
