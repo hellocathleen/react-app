@@ -1,10 +1,4 @@
-h1 {
-  color: tomato;
-}
 
-.report {
-  display: flex;
-}
 
 .beach-info {
   flex: 1;
@@ -14,4 +8,37 @@ h1 {
   flex: 5;
   display: flex;
   justify-content: space-evenly;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;     
+  background: no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+
+}
+
+.map {
+  margin: 0 auto;
+  width: 100px;
+}
+
+.beach-reports {
+
+}
+
+.report {
+  display: flex;
+  border: 1px solid #d3d3d3;
+  border-radius: .25rem;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: white;
 }

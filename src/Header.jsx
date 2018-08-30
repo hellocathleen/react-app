@@ -9,9 +9,7 @@ class Header extends Component {
       name: localStorage.getItem('name')
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-
   }
-
 
   handleSubmit() {
     axios.post(`http://localhost:8080/logout`, {
@@ -39,14 +37,15 @@ class Header extends Component {
     return (
       <header>
           <nav>
-            <h2><Link to='/'>Surf Buddy</Link></h2>
-            <ul>
-              <li><Link to='/login'>Login</Link></li>
-              <li><Link to='/register'>Register</Link></li>
-              <li><Link to={`/user/${userId}`}>Profile</Link></li>
-              <button type="submit" onClick={this.handleSubmit}>Logout</button>
-              {greeting}
+          <ul>
+            <div>
+            <Link className="login" to='/login'>Login</Link>
+            <Link className="register" to='/register'>Register</Link>
+            <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
+            {greeting}
+            </div>
             </ul>
+              <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
           </nav>
         </header>
     )
