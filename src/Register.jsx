@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 
 class Register extends Component {
@@ -85,28 +87,41 @@ class Register extends Component {
   render() {
     return (
       <div>
-      <h1>Register</h1>
-      <form onSubmit={this.addUser} action="/register" method="POST">
-        <label htmlFor="first_name">First name:</label>
-        <input id="first_name" name="first_name" onChange={this.handleChange} /><br/>
-        <label htmlFor="last_name">Last name:</label>
-        <input id="last_name" name="last_name" onChange={this.handleChange} /><br/>
-        <label htmlFor="email">Email:</label>
-        <input id="email" type="email" name="email" onChange={this.handleChange} /><br/>
-        <label htmlFor="phone">Phone number:</label>
-        <input id="phone" type="tel" name="phone_number" onChange={this.handleChange} /><br/>
-        <label htmlFor="password">Password:</label>
-        <input id="password" type="password" name="password" onChange={this.handleChange} /><br/>
-        <br/>
+        <img id="background" src="public/images/beach2.png"></img>
+        <div className="login-register-container">  
+          <p>Start getting notifications</p>
+          <form onSubmit={this.addUser} action="/register" method="POST">
+            <label htmlFor="first_name" ></label>
+            <input id="first_name" name="first_name" placeholder="First name" onChange={this.handleChange} /><br/>
+            <label htmlFor="last_name"></label>
+            <input id="last_name" placeholder="Last name" name="last_name" onChange={this.handleChange} /><br/>
+            <label htmlFor="email"></label>
+            <input id="email" type="email" name="email" placeholder="Email" onChange={this.handleChange} /><br/>
+            <label htmlFor="phone"></label>
+            <input id="phone" type="tel" name="phone_number" placeholder="Phone Number" onChange={this.handleChange} /><br/>
+            <label htmlFor="password"></label>
+            <input id="password" type="password" name="password" placeholder="Password" onChange={this.handleChange} /><br/>
+            <br/>
 
-        <label>Select your favorite beaches:</label>
-            {this.state.beaches.map((beach) => {
-              return <div key={beach.id}><input type="checkbox" className="checks" name={beach.name} onChange={this.handleChange} /><label>{beach.name}</label></div>
-                })}
-          <br/>
-
-          <button type="submit">Register</button>
-      </form>
+            <label>Select your favorite beaches:</label>
+                {this.state.beaches.map((beach) => {
+                  return <div key={beach.id}><input type="checkbox" className="checks" name={beach.name} onChange={this.handleChange} /><label>{beach.name}</label></div>
+                    })}
+              <br/>
+              <button id="register" type="submit">Register</button>
+          </form>
+        </div>
+        <div className="info">
+          <p>Register with Point Break</p>
+          <p>Getting starter is easy. Fill in our 
+            register<br/> form and select the beach you 
+            wish to<br/> recieve notifications from.</p>
+            <p><br/>Already have an account?</p>
+            <div>
+            <Link id="link" to='/login'>Log in</Link>
+            <Link id="link" to='/'>Return</Link>  
+            </div>
+        </div>
       </div>
     );
   }
