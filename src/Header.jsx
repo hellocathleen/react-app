@@ -20,7 +20,9 @@ class Header extends Component {
       if (res.data === "Logged out") {
         alert("You are logged out!")
         localStorage.clear();
-        window.location.reload();
+        this.setState({
+          name: null
+        })
       } 
     })
     .catch((res) => {
