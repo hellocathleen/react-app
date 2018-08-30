@@ -54,6 +54,7 @@ class Login extends Component {
           this.setState(() => ({
             redirectToHome: true
           }))
+          window.location.reload()
         }
       })
       .catch((res) => {
