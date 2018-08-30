@@ -29,7 +29,7 @@ class Header extends Component {
           <nav>
           <ul>
             <div>
-            <Link className="login" to='/login'>Login</Link>
+            <Link className="login" to='/login'>Log in</Link>
             <Link className="register" to='/register'>Register</Link>
             <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
 
