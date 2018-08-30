@@ -34,6 +34,7 @@ class Header extends Component {
     let greeting;
     let profileLink;
     let loginLink;
+    let registerLink;
     const userId = localStorage.getItem('id')
     if (this.state.name) {
       greeting = <h2>Hey, {this.state.name}. Ready to hit the waves? </h2>
@@ -41,17 +42,18 @@ class Header extends Component {
       loginLink = <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
     }
     if (!this.state.name) {
-      loginLink = <div><Link className="login" to='/login'>Login</Link>
-                  <Link className="register" to='/register'>Register</Link></div>
+      loginLink = <Link className="login" to='/login'>Log in</Link>
+      registerLink = <Link className="register" to='/register'>Register</Link>
     }
     return (
       <header>
           <nav>
             <div>
             {loginLink}
-            {greeting}
+            {registerLink}
             {profileLink}
             </div>
+            {greeting}
             <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
           </nav>
       </header>
