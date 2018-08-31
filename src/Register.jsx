@@ -44,8 +44,6 @@ class Register extends Component {
         favBeaches.push(checks[i].name)
       }
     }
-    console.log("User's favorite beaches:", favBeaches)
-
     const user = {first_name: element.first_name.value, 
                   last_name: element.last_name.value, 
                   email: element.email.value, 
@@ -53,7 +51,6 @@ class Register extends Component {
                   password: element.password.value,
                   notification_type: element.notification.value,
                   favBeaches: favBeaches}
-    console.log("User: ", user)
 
     axios.post(`http://localhost:8080/register`, user, {
       headers: { 'Content-Type': 'application/json'},
@@ -72,12 +69,6 @@ class Register extends Component {
         localStorage.setItem('name', name);
         localStorage.setItem('id', id)
         localStorage.setItem('email', email)
-        console.log("STATE:", this.state)
-        element.first_name.value = null;
-        // element.last_name.value = null;
-        // element.email.value = null;
-        // element.phone_number.value = null;
-        // element.password.value = null;
         this.setState(() => ({
           redirectToHome: true
         }))
