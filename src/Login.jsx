@@ -77,7 +77,7 @@ class Login extends Component {
               <input id="password" type="password" placeholder="Password" name="password" onChange={this.handleChange} /><br/>
               <input id="login-input" type="submit" value="Log in" />
               <p>Don't have an account?</p>
-              <a id="register" href="/register">Register</a>
+              <Link id="register" to='/register'>Register</Link>
             </form>
             </div>
       </div>
