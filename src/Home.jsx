@@ -25,8 +25,8 @@ class Home extends Component {
     return (
       <div>
       <Header />
-        <div id="background">
-          <img src="public/images/bw2.png"></img>
+        <div>
+          <img id="background" src="public/images/bw2.png"></img>
         </div>
 
         <div className="container">
@@ -63,7 +63,7 @@ class Home extends Component {
         <MyFancyComponent reports={ this.state.reports }/> 
         <h2>Surf Forecast</h2>
           <ReportList reports={ this.state.reports } />
-        </div>  
+        </div> 
     )
   }
 }

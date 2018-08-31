@@ -1,3 +1,4 @@
+
 .beach-info {
   flex: 1;
 }
@@ -7,18 +8,13 @@
   justify-content: space-evenly;
 }
 
-#background img {
-  position: fixed;
+#background {
   top: 0;
   left: 0;
-  background: no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: conver;
+  position: fixed;
   z-index: -1;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .map {
