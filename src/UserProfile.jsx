@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link, Redirect } from 'react-router-dom';
+
 
 class UserProfile extends Component {
   constructor(props){
@@ -142,23 +144,43 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
-      <h2>{this.state.name}'s profile </h2>
-        <label>Your favorite beaches:</label><br/>
+      <img id="background" src="../public/images/wave4.png"></img>
+      <div className="login-register-container"> 
+      <div className="circle" id="avatar">
+      <img id="icon" src="../public/images/avatar.png"/>{this.state.name}</div><br/>
+        <label>Your favorite beaches</label><br/>
         {this.state.userBeaches.map((beach) => {
-          return <div key={beach.id}>{beach.name} <button type="submit" name={beach.id} onClick={this.deleteBeach}>Delete</button> </div>
+          return <div className="beach" key={beach.id}> <button id="beach-button" type="submit" name={beach.id} onClick={this.deleteBeach}>{beach.name} x</button> </div>
           })}
       <br/>
-      <label>Add more favorite beaches:</label>
+      <label>Add more favorite beaches</label><br/>
         {this.state.beaches.map((beach, index) => {
-          return <div key={index}><input type="checkbox" className="checks" name={beach} /><label>{beach}</label></div>
-          })}
-      <button type="submit" onClick={this.addBeaches}>Submit</button>
-      <p></p>
-      <label>Notifications:</label><br/>
-        <select value={this.state.notification} onChange={this.saveSettings} >
+          return <div className="beach" key={index}><label id="beach-button">{beach}</label>
+          <label className="switch">
+          <input type="checkbox" className="checks" name={beach} /><span className="slider round"></span>
+          </label></div>
+          })}<br/>
+      <button className="profile" id="submit" type="submit" onClick={this.addBeaches}>Submit</button>
+      <div id="notifications">
+      <label>Notifications</label><br/>
+        <select value={this.state.notification} onChange={this.saveSettings}>
           <option value="on">On</option>
           <option value="off">Off</option>
         </select>
+      </div>  
+      </div>
+        <div className="info">
+            <p>Update your preferences.<br/><br/>
+            Each alarm is set for the most optimal surf<br/>
+            conditions to notify you when to grab your board and <br/>
+            head to the beachAdd or remove beaches to determine <br/>
+            which surf notifications notifications you will recieve. <br/>
+            <br/>Select which beaches you'd like to recieve a forecast <br/>
+            from and let Point Break take care of the rest.</p><br/>
+            <div>
+              <Link id="link" to='/'>Return</Link>
+            </div>  
+          </div>
       </div>
     )
   }
