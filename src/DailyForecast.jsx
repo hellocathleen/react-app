@@ -5,10 +5,9 @@ import SurfRating from './SurfRating.jsx';
 
 class DailyForecast extends Component {
   render() {
-    const surfData = this.props.surfData;
-    let date = new Date(Number(this.props.timestamp)).toUTCString();
-    let idx = date.indexOf('201');
-    date = date.slice(0, idx);
+    const { surfData, timestamp } = this.props;
+    const hour = new Date(Number(timestamp)).getHours();
+    const time = hour === 0 ? '12 AM' : hour < 12 ? hour + ' AM' : (hour - 12) + ' PM';
 
     let starRating = [];
     for (let i = 0; i < surfData.surfRating; i++) {
@@ -16,16 +15,14 @@ class DailyForecast extends Component {
     }
 
     return (
-      <div className='daily-forecast'>
-        <h4>{ date }</h4>
-        <div className='wave-div'>
-          <WaveIcon />
-          <span className='wave-data'>{ surfData.waveHeight } m &nbsp;&nbsp; { Math.round(surfData.wavePeriod) } s</span>
-        </div>
-        <div className='wind-div'>
-          <WindIcon />
-          <span className='wind-data'>{ Math.round(surfData.windSpeed) } km/h &nbsp; { surfData.windDirection }°</span>
-        </div>
+      <div className='hourly-forecast'>
+        <h4>{ time }</h4>
+        <WaveIcon />
+        <span className='wave-data'>{ (Math.round(surfData.waveHeight * 10) / 10).toFixed(1) } m </span>
+        <span className='wave-data'>{ Math.round(surfData.wavePeriod) } s </span>
+        <WindIcon />
+        <span className='wind-data'>{ Math.round(surfData.windSpeed) } km/h </span>
+        <span className='wind-data'>{ Math.round(surfData.windDirection) }° </span>
         <div className='surf-rating'>{ starRating }</div>
       </div>
     );

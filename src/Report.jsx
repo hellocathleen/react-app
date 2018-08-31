@@ -3,7 +3,7 @@ import DailyForecast from './DailyForecast.jsx';
 
 class Report extends Component {
   render() {
-    const report = this.props.report;
+    const { report } = this.props;
 
     const forecast = report.stormglass.map((obj, i) => {
       const timestamp = Object.keys(obj)[0];

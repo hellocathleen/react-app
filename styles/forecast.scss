@@ -1,19 +1,15 @@
-.daily-forecast h4 {
-  margin: 1em 0;
-}
-
-.wave-div,
-.wind-div {
-  line-height: 1.5em;
-  margin: .5em 0;
+.hourly-forecast {
+  display: flex;
 }
 
 .wave-data,
-.wind-data {
-  margin-left: .5em;
-  vertical-align: top;
-}
-
-.surf-rating {
-  margin: .5em 0;
+.wave-icon,
+.wind-data,
+.wind-icon,
+.surf-rating,
+.hourly-forecast h4 {
+  flex: 1;
+  margin: 0;
+  text-align: center;
+  vertical-align: center;
 }
