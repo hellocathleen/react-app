@@ -16,7 +16,7 @@ class HourlyForecast extends Component {
     }
 
     return (
-      <div>
+      <div className='hourly-forecast'>
         <h4>{ time }</h4>
         <WaveIcon />
         <span className='wave-data'>{ (Math.round(surfData[key].waveHeight * 10) / 10).toFixed(1) } m </span>

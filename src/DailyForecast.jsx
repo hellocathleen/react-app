@@ -12,7 +12,7 @@ class DailyForecast extends Component {
     return (
       <div className='daily-forecast'>
         <h3 className='date'>{ timestamp }</h3>
-        <div className='hourly-forecast'>
+        <div>
           { hourlyForecast }
         </div>
       </div>
