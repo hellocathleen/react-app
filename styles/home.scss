@@ -1,5 +1,4 @@
 
-
 .beach-info {
   flex: 1;
 }
@@ -9,7 +8,7 @@
   justify-content: space-evenly;
 }
 
-#background {
+#background-home {
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +18,6 @@
   -o-background-size: cover;
   background-size: cover;
   z-index: -1;
-
 }
 
 .map {
