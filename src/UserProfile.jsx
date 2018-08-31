@@ -175,7 +175,7 @@ class UserProfile extends Component {
             conditions to notify you when to grab your board and <br/>
             head to the beach. Add or remove beaches to determine <br/>
             which surf notifications you will recieve. <br/>
-            <br/>Select the beaches from which you'd like to recieve a forecast <br/>
+            <br/>Select the beaches from which you'd like to receive a forecast <br/>
             and let Point Break take care of the rest.</p><br/>
             <div>
               <Link id="link" to='/'>Return</Link>
