@@ -17,9 +17,9 @@
 
 }
 
-::placeholder { 
+::placeholder {
   color: white;
-  
+
 }
 
 .login-form {
@@ -82,18 +82,19 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
 }
 
-#background-register {
+#background {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: no-repeat center center fixed; 
+  background: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   z-index: -1;
-
+  height: 100vh;
+  width: 100vw;
 }
 
 .info {
