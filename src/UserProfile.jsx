@@ -13,6 +13,7 @@ class UserProfile extends Component {
     }
     this.deleteBeach = this.deleteBeach.bind(this);
     this.addBeaches = this.addBeaches.bind(this);
+    this.saveSettings = this.saveSettings.bind(this);
   }
 
   componentDidMount() {
@@ -92,7 +93,7 @@ class UserProfile extends Component {
       } else {
         axios.get(`http://localhost:8080/user/${this.state.id}`, {
           headers: {'Content-Type': 'application/json' },
-           withCredentials: true
+          withCredentials: true
          }).then(res => {
            console.log("Got user beaches again:", res);
            let userBeaches = res.data;
@@ -121,24 +122,44 @@ class UserProfile extends Component {
     }
   }
 
+  saveSettings(event) {
+    const value = event.target.value;
+    console.log(value)
+    const notification = { setting: value }
+    axios.post(`http://localhost:8080/api/user/notifications`, notification, {
+      withCredentials: true
+    }).then((results) => {
+      console.log("results:", results);
+      if (results.data === "Updated setting") {
+        alert("Your notification setting has been updated.")
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
   render() {
     return (
-      <header>
-          <nav>
-          <h2>{this.state.name}'s profile </h2>
-            <label>Your favorite beaches:</label><br/>
-            {this.state.userBeaches.map((beach) => {
-              return <div key={beach.id}>{beach.name} <button type="submit" name={beach.id} onClick={this.deleteBeach}>Delete</button> </div>
-                })}
-          <br/>
-          <label>Add more favorite beaches:</label>
-            {this.state.beaches.map((beach, index) => {
-                return <div key={index}><input type="checkbox" className="checks" name={beach} /><label>{beach}</label></div>
-              })}
-          <br/>
-          <button type="submit" onClick={this.addBeaches}>Submit</button>
-          </nav>
-        </header>
+      <div>
+      <h2>{this.state.name}'s profile </h2>
+        <label>Your favorite beaches:</label><br/>
+        {this.state.userBeaches.map((beach) => {
+          return <div key={beach.id}>{beach.name} <button type="submit" name={beach.id} onClick={this.deleteBeach}>Delete</button> </div>
+          })}
+      <br/>
+      <label>Add more favorite beaches:</label>
+        {this.state.beaches.map((beach, index) => {
+          return <div key={index}><input type="checkbox" className="checks" name={beach} /><label>{beach}</label></div>
+          })}
+      <button type="submit" onClick={this.addBeaches}>Submit</button>
+      <p></p>
+      <label>Notifications:</label><br/>
+        <select value={this.state.notification} onChange={this.saveSettings} >
+          <option value="on">On</option>
+          <option value="off">Off</option>
+        </select>
+      </div>
     )
   }
 }
