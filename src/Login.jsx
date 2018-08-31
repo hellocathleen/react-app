@@ -66,7 +66,7 @@ class Login extends Component {
     }
     return (
       <div>
-        <img id="background" src="public/images/wave.png"></img>
+        <img id="background-login" src="public/images/wave.png"></img>
         <div className="login-register-container">
           <div className="login-form">
             <form onSubmit={this.loginUser} action="/login" method="POST">
@@ -96,7 +96,6 @@ class Login extends Component {
             </div>
         </div>
     </div>
-      
     );
   }
 }

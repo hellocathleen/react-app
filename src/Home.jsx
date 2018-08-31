@@ -63,7 +63,7 @@ class Home extends Component {
         <MyFancyComponent reports={ this.state.reports }/> 
         <h2>Surf Forecast</h2>
           <ReportList reports={ this.state.reports } />
-        </div>  
+        </div> 
     )
   }
 }
