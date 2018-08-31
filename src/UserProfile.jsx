@@ -16,6 +16,7 @@ class UserProfile extends Component {
     this.deleteBeach = this.deleteBeach.bind(this);
     this.addBeaches = this.addBeaches.bind(this);
     this.saveSettings = this.saveSettings.bind(this);
+    this.saveNoteType = this.saveNoteType.bind(this);
   }
 
   componentDidMount() {
@@ -39,8 +40,6 @@ class UserProfile extends Component {
     }).catch((res) => {
       console.log("error", res);
     });
-
-
   }
 
   deleteBeach(event) {
@@ -117,11 +116,29 @@ class UserProfile extends Component {
     }).catch((res) => {
       console.log("error", res);
     })
-    for (let i = 0; i < checks.length; i++) {
-      if (checks[i].checked === true) {
-        checks[i].checked = false;
+    // for (let i = 0; i < checks.length; i++) {
+    //   if (checks[i].checked === true) {
+    //     checks[i].checked = false;
+    //   }
+    // }
+  }
+
+  saveNoteType(event) {
+    const value = event.target.value;
+    console.log(value)
+    const notification = { setting: value }
+    console.log(notification)
+    axios.post(`http://localhost:8080/api/user/notificationtype`, notification, {
+      withCredentials: true
+    }).then((results) => {
+      console.log("results:", results);
+      if (results.data === "Updated notification type") {
+        alert("Your notification type preference has been updated.")
       }
-    }
+    })
+    .catch((err) => {
+      console.log(err)
+    })
   }
 
   saveSettings(event) {
@@ -162,8 +179,13 @@ class UserProfile extends Component {
           })}<br/>
       <button className="profile" id="submit" type="submit" onClick={this.addBeaches}>Submit</button>
       <div id="notifications">
-      <label>Notifications</label><br/>
-        <select value="notification" onChange={this.saveSettings}>
+      <label>Notification Type</label><br/>
+      <select onChange={this.saveNoteType}>
+        <option value="email">Email</option>
+        <option value="text">Text</option>
+      </select><br/>
+      <label>Notification Setting</label><br/>
+        <select onChange={this.saveSettings}>
           <option value="on">On</option>
           <option value="off">Off</option>
         </select>
