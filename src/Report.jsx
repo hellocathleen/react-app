@@ -2,15 +2,33 @@ import React, { Component } from 'react';
 import DailyForecast from './DailyForecast.jsx';
 
 class Report extends Component {
+  constructor(props) {
+    super(props);
+    this.buildForecast = this.buildForecast.bind(this);
+  }
+
+  buildForecast(data) {
+    return data.reduce((obj, datum) => {
+      const key = Object.keys(datum)[0];
+      const date = new Date(Number(key)).toDateString();
+
+      if (!obj[date]) {
+        obj[date] = [];
+      }
+
+      obj[date].push(datum);
+
+      return obj;
+    }, {});
+  }
+
   render() {
     const { report } = this.props;
-
-    const forecast = report.stormglass.map((obj, i) => {
-      const timestamp = Object.keys(obj)[0];
-      const surfData = obj[timestamp];
-
-      return <DailyForecast key={ i } timestamp={ timestamp } surfData={ surfData } />
-    });
+    const builtForecast = this.buildForecast(report.stormglass);
+    const dailyForecast = [];
+    for (let key in builtForecast) {
+      dailyForecast.push(<DailyForecast key={ key } timestamp={ key } surfData={ builtForecast[key] } />)
+    }
 
     return (
       <div className='report'>
@@ -20,7 +38,7 @@ class Report extends Component {
           <p>Lng: { report.longitude }</p>
         </div>
         <div className='beach-forecast'>
-          { forecast }
+          { dailyForecast }
         </div>
       </div>
     );
