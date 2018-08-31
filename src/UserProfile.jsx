@@ -163,7 +163,7 @@ class UserProfile extends Component {
       <button className="profile" id="submit" type="submit" onClick={this.addBeaches}>Submit</button>
       <div id="notifications">
       <label>Notifications</label><br/>
-        <select value={this.state.notification} onChange={this.saveSettings}>
+        <select value="notification" onChange={this.saveSettings}>
           <option value="on">On</option>
           <option value="off">Off</option>
         </select>
@@ -173,10 +173,10 @@ class UserProfile extends Component {
             <p>Update your preferences.<br/><br/>
             Each alarm is set for the most optimal surf<br/>
             conditions to notify you when to grab your board and <br/>
-            head to the beachAdd or remove beaches to determine <br/>
-            which surf notifications notifications you will recieve. <br/>
-            <br/>Select which beaches you'd like to recieve a forecast <br/>
-            from and let Point Break take care of the rest.</p><br/>
+            head to the beach. Add or remove beaches to determine <br/>
+            which surf notifications you will receive. <br/>
+            <br/>Select the beaches from which you'd like to receive a forecast <br/>
+            and let Point Break take care of the rest.</p><br/>
             <div>
               <Link id="link" to='/'>Return</Link>
             </div>  
