@@ -8,6 +8,11 @@ class Report extends Component {
       collapse: true
     };
     this.buildForecast = this.buildForecast.bind(this);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.setState({ collapse: !this.state.collapse });
   }
 
   buildForecast(data) {
@@ -35,17 +40,15 @@ class Report extends Component {
 
     return (
       <div className='report'>
-        <div className='beach-info'>
-          <h3>{ report.name }</h3>
-          <p>Lat: { report.latitude }</p>
-          <p>Lng: { report.longitude }</p>
-        </div>
-        <div className='beach-forecast'>
-          { this.state.collapse ? dailyForecast[0] : dailyForecast }
-          <div className="collapse">
-            <button>Expand/collapse</button>
+          <div className='beach-info'>
+            <h3>{ report.name }</h3>
           </div>
-        </div>
+          <div className='beach-forecast'>
+            { this.state.collapse ? dailyForecast[0] : dailyForecast }
+            <div className="collapse">
+              <button onClick={ this.onClick }>{ this.state.collapse ? 'More' : 'Less' }</button>
+            </div>
+          </div>
       </div>
     );
   }
