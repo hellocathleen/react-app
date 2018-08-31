@@ -14,7 +14,7 @@ letter-spacing: 0.063em;
 
 }
 
-.login, .register, .logout {
+.login, .register, .logout, .profile {
   float:right;
   text-decoration: none;
   font-family: $font;
@@ -29,6 +29,7 @@ letter-spacing: 0.063em;
   margin: 20px;
   letter-spacing: 0.069em;
   width: 85px;
+  font-size: small;
 
   &:hover {
     background-color: white;
@@ -104,4 +105,27 @@ padding-bottom: 60px;
   margin-right: auto;
   text-decoration: none;
   
+}
+
+#submit {
+  float: none;
+
+  &:hover {
+    background-color: white;
+    color: green;
+  }
+
+}
+
+#avatar {
+  background-color: rgba(41, 129, 70, 0.6);
+  margin: auto;
+  display: inline-grid;
+  margin-top: 10px;   
+}
+
+#notifications {
+  position: absolute;
+  bottom: 20px;
+  left: 38%;
 }
