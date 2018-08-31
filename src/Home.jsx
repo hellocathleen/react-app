@@ -26,7 +26,7 @@ class Home extends Component {
       <div>
       <Header />
         <div>
-          <img id="background-home" src="public/images/bw2.png"></img>
+          <img id="background" src="public/images/bw2.png"></img>
         </div>
 
         <div className="container">

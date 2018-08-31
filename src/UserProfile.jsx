@@ -158,7 +158,7 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
-      <img id="background-profile" src="../public/images/wave4.png"></img>
+      <img id="background" src="../public/images/wave4.png"></img>
       <div className="login-register-container"> 
       <div className="circle" id="avatar">
       <img id="icon" src="../public/images/avatar.png"/>{this.state.name}</div><br/>
