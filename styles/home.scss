@@ -30,13 +30,28 @@
 
 }
 
-.report {
-  display: flex;
+.forecast-card {
   border: 1px solid #d3d3d3;
   border-radius: .25rem;
   margin: 10px;
   padding: 10px;
+  padding-bottom: 0;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   background-color: white;
+
+  .collapse {
+    text-align: center;
+    padding-top: 1em;
+
+    button {
+      border: none;
+      font-size: 1.7em;
+      font-weight: bold;
+    }
+  }
+}
+
+.report {
+  display: flex;
 }
