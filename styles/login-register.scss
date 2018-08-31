@@ -17,9 +17,9 @@
 
 }
 
-::placeholder { 
+::placeholder {
   color: white;
-  
+
 }
 
 .login-form {
@@ -60,7 +60,7 @@
   margin: 20px;
   letter-spacing: 0.069em;
   width: 85px;
-  text-decoration: none;  
+  text-decoration: none;
   font-size: 12px;
 
   &:hover {
@@ -86,18 +86,19 @@
 
 }
 
-#background-register {
+#background {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: no-repeat center center fixed; 
+  background: no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   z-index: -1;
-
+  height: 100vh;
+  width: 100vw;
 }
 
 .info {
