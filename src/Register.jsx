@@ -9,7 +9,8 @@ class Register extends Component {
     this.state = {
       beaches: [],
       favBeaches: [],
-      redirectToHome: false
+      redirectToHome: false,
+      notification: "email"
     };
     this.addUser = this.addUser.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -30,12 +31,12 @@ class Register extends Component {
     this.setState({
       [name]: value
     });
+    console.log("State:", this.state)
   }
 
   addUser(event) {
     event.preventDefault();
     const element = event.target.elements;
-
     const favBeaches = [];
     const checks = document.getElementsByClassName('checks')
     for (let i = 0; i < checks.length; i++) {
@@ -50,6 +51,7 @@ class Register extends Component {
                   email: element.email.value, 
                   phone_number: element.phone_number.value, 
                   password: element.password.value,
+                  notification_type: element.notification.value,
                   favBeaches: favBeaches}
     console.log("User: ", user)
 
@@ -72,10 +74,10 @@ class Register extends Component {
         localStorage.setItem('email', email)
         console.log("STATE:", this.state)
         element.first_name.value = null;
-        element.last_name.value = null;
-        element.email.value = null;
-        element.phone_number.value = null;
-        element.password.value = null;
+        // element.last_name.value = null;
+        // element.email.value = null;
+        // element.phone_number.value = null;
+        // element.password.value = null;
         this.setState(() => ({
           redirectToHome: true
         }))
@@ -108,11 +110,16 @@ class Register extends Component {
             <input id="password" type="password" name="password" placeholder="Password" onChange={this.handleChange} /><br/>
             <br/>
 
-            <label>Select your favorite beaches:</label>
+            <label>Select your favorite beaches</label>
                 {this.state.beaches.map((beach) => {
                   return <div key={beach.id}><input type="checkbox" className="checks" name={beach.name} onChange={this.handleChange} /><label>{beach.name}</label></div>
                     })}
               <br/>
+              <label>Notification Type</label><br/>
+              <select value={this.state.notification} name="notification" onChange={this.handleChange}>
+                <option value="email">Email</option>
+                <option value="text">Text</option>
+              </select><br/>
               <button id="register" type="submit">Register</button>
           </form>
         </div>
