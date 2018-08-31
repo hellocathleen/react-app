@@ -43,8 +43,7 @@ class Header extends Component {
     let registerLink;
     const userId = localStorage.getItem('id')
     if (this.state.name) {
-      greeting = <h2>Hey, {this.state.name}. Ready to hit the waves? </h2>
-      profileLink = <Link className="profile" to={`/user/${userId}`}>Profile</Link>
+      profileLink = <Link className="profile" to={`/user/${userId}`}>{this.state.name}<img className="profile-avatar" src="public/images/avatar.png"/></Link>
       loginLink = <button className="logout" type="submit" onClick={this.handleSubmit}>Logout</button>
     }
     if (!this.state.name) {

@@ -60,7 +60,7 @@
   margin: 20px;
   letter-spacing: 0.069em;
   width: 85px;
-  text-decoration: none;
+  text-decoration: none;  
   font-size: 12px;
 
   &:hover {
@@ -136,3 +136,95 @@
   }
 }
 
+.beach {
+  display: -webkit-inline-box;
+  text-decoration: none;
+  font-family: $font;
+  text-align: center;
+  background-color: white;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+  letter-spacing: 0.069em;
+  width: max-content;
+  font-size: small;
+
+  &:hover {
+    background-color: transparent;
+    color: white;
+  }
+}
+
+#beach-button {
+  background: transparent;
+  border:none;
+  letter-spacing: 0.069em;
+  width: max-content;
+  font-size: small;
+  color: green;
+
+
+  &:hover {
+    background-color: transparent;
+    color: white;
+  }
+}
+
+.switch {
+  display: -webkit-box;
+  position: relative;
+  margin-left: 5px;
+  width: 25px;
+  height: 18px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 11px;
+  width: 11px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: green;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px green;
+}
+
+input:checked + .slider:before {
+
+  transform: translateX(7px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 15px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
