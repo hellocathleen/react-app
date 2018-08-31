@@ -119,9 +119,9 @@ class Register extends Component {
         </div>
         <div className="info">
           <p>Register with Point Break</p>
-          <p>Getting starter is easy. Fill in our 
-            register<br/> form and select the beach you 
-            wish to<br/> recieve notifications from.</p>
+          <p>Getting started is easy. Fill in our 
+            register<br/> form and select the beaches you 
+            wish to<br/> receive surf notifications for.</p>
             <p><br/>Already have an account?</p>
             <div>
             <Link id="link" to='/login'>Log in</Link>
