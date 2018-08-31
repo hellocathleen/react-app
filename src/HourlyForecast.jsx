@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WaveIcon from './WaveIcon.jsx';
 import WindIcon from './WindIcon.jsx';
+import ArrowIcon from './ArrowIcon.jsx';
 import SurfRating from './SurfRating.jsx';
 
 class HourlyForecast extends Component {
@@ -23,7 +24,7 @@ class HourlyForecast extends Component {
         <span className='wave-data'>{ Math.round(surfData[key].wavePeriod) } s </span>
         <WindIcon />
         <span className='wind-data'>{ Math.round(surfData[key].windSpeed) } km/h </span>
-        <span className='wind-data'>{ Math.round(surfData[key].windDirection) }° </span>
+        <ArrowIcon windDirection={ surfData[key].windDirection }/>
         <div className='surf-rating'>{ starRating }</div>
       </div>
     );
