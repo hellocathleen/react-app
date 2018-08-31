@@ -37,7 +37,6 @@ class Header extends Component {
   }
 
   render() {
-    let greeting;
     let profileLink;
     let loginLink;
     let registerLink;
@@ -58,7 +57,6 @@ class Header extends Component {
             {registerLink}
             {profileLink}
             </div>
-            {greeting}
             <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
           </nav>
       </header>
