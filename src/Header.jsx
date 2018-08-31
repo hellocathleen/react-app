@@ -6,9 +6,15 @@ class Header extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: localStorage.getItem('name')
+      name: null
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentDidMount() {
+    this.setState({
+      name: localStorage.getItem('name')
+    })
   }
 
   handleSubmit() {
