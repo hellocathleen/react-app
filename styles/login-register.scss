@@ -69,7 +69,7 @@
 }
 
 
-.login-register-container {
+.register-container {
   font-family: $font;
   position: fixed;
   top: 10%;
@@ -80,6 +80,21 @@
   text-align: center;
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  height: 580px;
+}
+
+.login-container {
+  font-family: $font;
+  position: fixed;
+  top: 10%;
+  right: 50%;
+  border-width: 1px;
+  background: rgba(255, 254, 254, 0.5);
+  width: 400px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  height: 400px;
 }
 
 .info {
