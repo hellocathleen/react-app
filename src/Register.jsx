@@ -86,7 +86,7 @@ class Register extends Component {
     return (
       <div>
         <img id="background" src="public/images/beach2.png"></img>
-        <div className="register-container">  
+        <div className="login-register-container">  
           <p>Start getting notifications</p>
           <form onSubmit={this.addUser} action="/register" method="POST">
             <label htmlFor="first_name" ></label>
