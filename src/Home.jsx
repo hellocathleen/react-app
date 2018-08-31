@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from './Header.jsx';
 import ReportList from './ReportList.jsx';
 import axios from 'axios';
 import MyFancyComponent from './MapContainer.jsx';
@@ -23,6 +24,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+      <Header />
         <div id="background">
           <img src="public/images/bw2.png"></img>
         </div>
@@ -51,9 +53,13 @@ class Home extends Component {
               <span className="notification-hidden">
               Add your own personal preferences to get forecasts and set 
               up Surf Alarms when you want.</span>
-            </div>
+            </div> 
+            <a id="down" href="#forecast">
+            <span className="down-hidden">
+              Checkout today's forecast</span>
+          <img id="icon-down" src="public/images/down-arrow.png"/></a>
           </div>
-
+        <a name="forecast"></a>
         <MyFancyComponent reports={ this.state.reports }/> 
         <h2>Surf Forecast</h2>
           <ReportList reports={ this.state.reports } />
