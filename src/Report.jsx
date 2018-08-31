@@ -4,6 +4,9 @@ import DailyForecast from './DailyForecast.jsx';
 class Report extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      collapse: true
+    };
     this.buildForecast = this.buildForecast.bind(this);
   }
 
@@ -38,7 +41,10 @@ class Report extends Component {
           <p>Lng: { report.longitude }</p>
         </div>
         <div className='beach-forecast'>
-          { dailyForecast }
+          { this.state.collapse ? dailyForecast[0] : dailyForecast }
+          <div className="collapse">
+            <button>Expand/collapse</button>
+          </div>
         </div>
       </div>
     );
