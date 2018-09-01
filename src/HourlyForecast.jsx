@@ -11,8 +11,13 @@ class HourlyForecast extends Component {
     const hour = new Date(Number(key)).getHours();
     const time = hour === 0 ? '12 AM' : hour < 12 ? hour + ' AM' : (hour - 12) + ' PM';
 
-    let starRating = [];
-    for (let i = 0; i < surfData[key].surfRating; i++) {
+    const { waveHeight, wavePeriod, windSpeed, windDirection, surfRating } = surfData[key];
+    const roundWaveHeight = (Math.round(waveHeight * 10) / 10).toFixed(1);
+    const roundWavePeriod = Math.round(wavePeriod);
+    const roundWindSpeed = Math.round(windSpeed);
+
+    const starRating = [];
+    for (let i = 0; i < surfRating; i++) {
       starRating.push(<SurfRating key={ i }/>);
     }
 
@@ -20,11 +25,11 @@ class HourlyForecast extends Component {
       <div className='hourly-forecast'>
         <h4>{ time }</h4>
         <WaveIcon />
-        <span className='wave-data'>{ (Math.round(surfData[key].waveHeight * 10) / 10).toFixed(1) } m </span>
-        <span className='wave-data'>{ Math.round(surfData[key].wavePeriod) } s </span>
+        <span className='wave-data'>{ isNaN(roundWaveHeight) ? '---' : roundWaveHeight + ' m' }</span>
+        <span className='wave-data'>{ isNaN(roundWavePeriod) ? '---' : roundWavePeriod + ' s' }</span>
         <WindIcon />
-        <span className='wind-data'>{ Math.round(surfData[key].windSpeed) } km/h </span>
-        <ArrowIcon windDirection={ surfData[key].windDirection }/>
+        <span className='wind-data'>{ isNaN(roundWindSpeed) ? '---' : roundWindSpeed + 'km/h' }</span>
+        <ArrowIcon windDirection={ windDirection }/>
         <div className='surf-rating'>{ starRating }</div>
       </div>
     );
