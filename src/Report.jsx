@@ -40,10 +40,10 @@ class Report extends Component {
 
     return (
       <div className='forecast-card'>
+        <div className='beach-info'>
+          <h3>{ report.name }</h3>
+        </div>
         <div className='report'>
-          <div className='beach-info'>
-            <h3>{ report.name }</h3>
-          </div>
           <div className='beach-forecast'>
             { this.state.collapse ? dailyForecast[0] : dailyForecast }
           </div>

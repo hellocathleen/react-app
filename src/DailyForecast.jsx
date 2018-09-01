@@ -13,7 +13,16 @@ class DailyForecast extends Component {
 
     return (
       <div className='daily-forecast'>
-        <h3 className='date'>{ date }</h3>
+        <div className='forecast-header'>
+          <h3 className='date'>{ date }</h3>
+          <span>Swell</span>
+          <span>Height</span>
+          <span>Period</span>
+          <span>Wind</span>
+          <span>Speed</span>
+          <span>Direction</span>
+          <span>Rating</span>
+        </div>
         <div>
           { hourlyForecast }
         </div>
