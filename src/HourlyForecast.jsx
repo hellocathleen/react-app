@@ -28,7 +28,7 @@ class HourlyForecast extends Component {
         <span className='wave-data'>{ isNaN(roundWaveHeight) ? '---' : roundWaveHeight + ' m' }</span>
         <span className='wave-data'>{ isNaN(roundWavePeriod) ? '---' : roundWavePeriod + ' s' }</span>
         <WindIcon />
-        <span className='wind-data'>{ isNaN(roundWindSpeed) ? '---' : roundWindSpeed + 'km/h' }</span>
+        <span className='wind-data'>{ isNaN(roundWindSpeed) ? '---' : roundWindSpeed + ' km/h' }</span>
         <ArrowIcon windDirection={ windDirection }/>
         <div className='surf-rating'>{ starRating }</div>
       </div>

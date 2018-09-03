@@ -56,7 +56,7 @@ class Home extends Component {
             </div>
             <a id="down" href="#forecast">
             <span className="down-hidden">
-              Checkout today's forecast</span>
+              Check out today's forecast</span>
           <img id="icon-down" src="public/images/down-arrow.png"/></a>
           </div>
         <a name="forecast"></a>
