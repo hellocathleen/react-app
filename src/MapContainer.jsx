@@ -27,7 +27,7 @@ const MyMapComponent = compose(
 <div className="map">
   <GoogleMap
     defaultZoom={8}
-    defaultCenter={{ lat: 48.530889, lng: -124.466240 }}
+    defaultCenter={{ lat: 48.799597, lng: -125.225464 }}
   >
   {props.locations.map((location, i) => {
   return <Marker
