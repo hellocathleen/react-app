@@ -1,41 +1,16 @@
-React Boilerplate
-=====================
+# Point Break - a Vancouver Island surfer's guide to great surfing
+Point Break is all about getting you the info you need in order to enjoy the best of Vancouver Island surfing. Point Break offers user registration, where a user may select up to 10 of their favorite Vancouver Island beaches. Users will then receive notifications via email or text, depending on their preference, telling them when the weather conditions are just right for a great day of surfing. 
 
-A minimal and light dev environment for ReactJS.
+Point Break also offers simplified surf forecasts on their home page so you can have a quick look at what the swell and wind will be like up to six days in advance. We've included a star-rating system so that you can interpret the forecast more easily if you're new to reading these types of forecasts. 
 
-### Usage
+## Getting Started
 
-Clone the boilerplate and create your own git repo.
-
-```
-git clone git@github.com:lighthouse-labs/react-simple-boilerplate.git
-cd react-simple-boilerplate
-git remote rm origin
-git remote add origin [YOUR NEW REPOSITORY]
-# Manually update your package.json file
-```
-
-Install the dependencies and start the server.
-
-```
-npm install
-npm start
-open http://localhost:3000
-```
-
-### Static Files
-
-You can store static files like images, fonts, etc in the `build` folder.
-
-For example, if you copy a file called my_image.png into the build folder you can access it using `http://localhost:3000/build/my_image.png`.
-
-### Linting
-
-This boilerplate project includes React ESLint configuration.
-
-```
-npm run lint
-```
+1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
+2. Update the .env file with your correct local information
+3. Install dependencies: `npm i`
+4. Run the server: `npm start`
+5. Run the back-end: [Point Break server](https://github.com/hellocathleen/VI-Surf-Buddy) 
+6. Visit `http://localhost:3000`
 
 ### Dependencies
 
