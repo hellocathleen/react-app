@@ -2,6 +2,7 @@ import React from "react"
 import { compose, withProps, withStateHandlers } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
 
+
 const MyMapComponent = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
@@ -36,7 +37,7 @@ const MyMapComponent = compose(
 
             {(props.isOpen && props.showInfoIndex == location.name) &&
             <InfoWindow onCloseClick={props.onToggleOpen}>
-            <div> 
+            <div className="info-window"> 
               {location.name} 
             </div>
             </InfoWindow>}
@@ -75,8 +76,6 @@ class MyFancyComponent extends React.PureComponent {
         locations={reports}
         isMarkerShown={this.state.isMarkerShown}
         onMarkerClick={this.handleMarkerClick}
-        handleToggleOpen={this.handleToggleOpen}
-        handleToggleClose={this.handleToggleClose}
         
       />
       
