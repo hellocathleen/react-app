@@ -43,18 +43,13 @@ class Report extends Component {
         <div className='beach-info'>
           <h3>{ report.name }</h3>
         </div>
-        <div id="report-header">
-          <h4>Time</h4>
-          <h4>icon</h4>
-          <h4>Wave Height</h4>
-          <h4>Wave period</h4>
-          <h4>icon</h4>
-          <h4>Wind Speed</h4>
-          <h4>Wave Direction</h4>
-          <h4>Swell Rating</h4>
-        </div> 
-        <div className='beach-forecast'>
-          { dailyForecast }
+        <div className='report'>
+          <div className='beach-forecast'>
+            { this.state.collapse ? dailyForecast[0] : dailyForecast }
+          </div>
+        </div>
+        <div className="collapse">
+          <button onClick={ this.onClick }>{ this.state.collapse ? '\u02C5' : '\u02C4' }</button>
         </div>
       </div>
     );
