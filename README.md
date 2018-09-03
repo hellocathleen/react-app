@@ -18,6 +18,10 @@ Point Break was completed as the final project for Lighthouse Labs, Sept. 2018. 
 ![Home](https://github.com/hellocathleen/react-app/blob/cathleen/public/screenshots/Home.png?raw=true)
 * Register, log in, or view this week's forecasts for 10 of Vancouver Island's best beaches.
 
+
+![Map](https://github.com/hellocathleen/react-app/blob/master/public/screenshots/Map.png?raw=true)
+* Check the pins on the map to discover the locations of Vancouver Island beaches
+
 ![Forecast](https://github.com/hellocathleen/react-app/blob/cathleen/public/screenshots/Forecasts.png?raw=true)
 * Check the swell and wind conditions up to six days in advance for Vancouver Island beaches. Click the arrow to expand the window and see the whole week's forecast.
 
