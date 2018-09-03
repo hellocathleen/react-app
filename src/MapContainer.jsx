@@ -1,6 +1,7 @@
 import React from "react"
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { compose, withProps, withStateHandlers } from "recompose"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
+
 
 const MyMapComponent = compose(
   withProps({
@@ -9,8 +10,19 @@ const MyMapComponent = compose(
     containerElement: <div className="map" style={{ height: `400px`, width:`90%`}} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
+  withStateHandlers(() => ({
+    isOpen: false,
+  }), {
+    onToggleOpen: ({ isOpen }) => () => ({
+      isOpen: !isOpen,
+    }),
+    showInfo: ({ isOpen }) => (i) => ({
+      isOpen: !isOpen,
+      showInfoIndex: i,
+    })
+  }),
   withScriptjs,
-  withGoogleMap
+  withGoogleMap,
 )((props) =>
 <div className="map">
   <GoogleMap
@@ -18,14 +30,26 @@ const MyMapComponent = compose(
     defaultCenter={{ lat: 48.530889, lng: -124.466240 }}
   >
   {props.locations.map((location, i) => {
-  return <Marker key={i} label={location.name} position= {{ lat: Number(location.latitude), lng: Number(location.longitude) }}/> })}
+  return <Marker
+            key={i}
+            position= {{ lat: Number(location.latitude), lng: Number(location.longitude) }}
+            onClick={() => { props.showInfo(location.name)}}>
+
+            {(props.isOpen && props.showInfoIndex == location.name) &&
+            <InfoWindow onCloseClick={props.onToggleOpen}>
+            <div className="info-window"> 
+              {location.name} 
+            </div>
+            </InfoWindow>}
+          </Marker>})}
   </GoogleMap>
 </div>  
 )
 
 class MyFancyComponent extends React.PureComponent {
   state = {
-    isMarkerShown: false,
+    isMarkerShown: true,
+    isOpen: false
   }
 
   componentDidMount() {
@@ -42,8 +66,6 @@ class MyFancyComponent extends React.PureComponent {
     this.setState({ isMarkerShown: true })
     this.delayedShowMarker()
   }
-
-
 
   render() {
     const reports = this.props.reports

@@ -19,7 +19,7 @@ class HourlyForecast extends Component {
     const starRating = [];
     for (let i = 0; i < surfRating; i++) {
       starRating.push(<SurfRating key={ i }/>);
-    }
+    } 
 
     return (
       <div className='hourly-forecast'>
@@ -32,6 +32,7 @@ class HourlyForecast extends Component {
         <ArrowIcon windDirection={ windDirection }/>
         <div className='surf-rating'>{ starRating }</div>
       </div>
+      
     );
   }
 }
