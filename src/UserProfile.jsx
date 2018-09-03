@@ -44,29 +44,25 @@ class UserProfile extends Component {
 
   deleteBeach(event) {
     const beach = { id: event.target.name, userId: this.state.id }
-    console.log("Target:", event.target.name)
     axios.post(`http://localhost:8080/beach/delete`, beach, {
       headers: { 'Content-Type': 'application/json'},
       withCredentials: true
     }).then((results) => {
       console.log("Beaches deleted:", results)
-     axios.get(`http://localhost:8080/user/${this.state.id}`, {
+      axios.get(`http://localhost:8080/user/${this.state.id}`, {
         headers: {'Content-Type': 'application/json' },
-         withCredentials: true
-       }).then(res => {
-         console.log("res.data:", res.data);
-         let userBeaches = res.data;
-         this.setState({ userBeaches });
-         console.log("STATE", this.state)
-       })
-       .catch((res) => {
-         console.log("error", res);
-       }); 
+          withCredentials: true
+        }).then(res => {
+          let userBeaches = res.data;
+          this.setState({ userBeaches });
+          console.log("STATE", this.state)
+        }).catch((res) => {
+          console.log("error", res);
+        }); 
 
-       axios.get(`http://localhost:8080/api/user/beaches`, {
+        axios.get(`http://localhost:8080/api/user/beaches`, {
         withCredentials: true })
         .then((res) => {
-          console.log(res)
           const beaches = res.data;
           this.setState({ beaches });
         }).catch((res) => {
@@ -74,6 +70,7 @@ class UserProfile extends Component {
         });
     })
   }
+
   addBeaches(event) {
     event.preventDefault();
     const favBeaches = [];
@@ -116,11 +113,11 @@ class UserProfile extends Component {
     }).catch((res) => {
       console.log("error", res);
     })
-    // for (let i = 0; i < checks.length; i++) {
-    //   if (checks[i].checked === true) {
-    //     checks[i].checked = false;
-    //   }
-    // }
+    for (let i = 0; i < checks.length; i++) {
+      if (checks[i].checked === true) {
+        checks[i].checked = false;
+      }
+    }
   }
 
   saveNoteType(event) {

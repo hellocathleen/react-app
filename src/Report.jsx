@@ -4,7 +4,15 @@ import DailyForecast from './DailyForecast.jsx';
 class Report extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      collapse: true
+    };
     this.buildForecast = this.buildForecast.bind(this);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.setState({ collapse: !this.state.collapse });
   }
 
   buildForecast(data) {
@@ -31,11 +39,9 @@ class Report extends Component {
     }
 
     return (
-      <div className='report'>
+      <div className='forecast-card'>
         <div className='beach-info'>
           <h3>{ report.name }</h3>
-          <p>Lat: { report.latitude }</p>
-          <p>Lng: { report.longitude }</p>
         </div>
         <div id="report-header">
           <h4>Time</h4>
