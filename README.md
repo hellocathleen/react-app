@@ -15,6 +15,8 @@ Point Break also offers simplified surf forecasts on their home page so you can 
 ### Dependencies
 
 * React
+* React Google Maps
+* Axios
 * Webpack
 * [babel-loader](https://github.com/babel/babel-loader)
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
