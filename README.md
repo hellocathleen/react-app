@@ -7,6 +7,12 @@ Point Break offers simplified surf forecasts on their home page so you can have 
 
 Point Break presents a simple, clean user interface for quick and easy navigation. Stop checking multiple weather sources every day. Sign up, sit back, and allow Point Break to let you know when to grab your board and go.
 
+## Team Members
+Point Break was completed as the final project for Lighthouse Labs, Sept. 2018. Team members who contributed to this project are:
+- Cathleen Melendez (Database, user registration and user profile)
+- Kenny Brown (Google Maps API, front-end design)
+- Ryan White (Weather and notification APIs, surf forecast rendering)
+
 ## Demo
 
 ![Home](https://github.com/hellocathleen/react-app/blob/cathleen/public/screenshots/Home.png?raw=true)
