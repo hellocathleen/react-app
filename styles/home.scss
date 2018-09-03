@@ -1,3 +1,5 @@
+$font: 'Nunito Sans', sans-serif;
+
 #background {
   top: 0;
   left: 0;
@@ -16,6 +18,7 @@
   color: white;
   font-size: 2em;
   margin-left: .5em;
+  font-family: $font;
 }
 
 .report {
