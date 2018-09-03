@@ -37,6 +37,16 @@ class Report extends Component {
           <p>Lat: { report.latitude }</p>
           <p>Lng: { report.longitude }</p>
         </div>
+        <div id="report-header">
+          <h4>Time</h4>
+          <h4>icon</h4>
+          <h4>Wave Height</h4>
+          <h4>Wave period</h4>
+          <h4>icon</h4>
+          <h4>Wind Speed</h4>
+          <h4>Wave Direction</h4>
+          <h4>Swell Rating</h4>
+        </div> 
         <div className='beach-forecast'>
           { dailyForecast }
         </div>

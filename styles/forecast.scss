@@ -19,6 +19,13 @@
   font-size: 13px;
 }
 
-.report-header{
+#report-header{
   color: aqua;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+
+  h4 {
+
+  }
 }
