@@ -5,15 +5,15 @@ Eliminating the need to check multiple sources frequently to get weather informa
 
 Point Break offers simplified surf forecasts on their home page so you can have a heads-up on what the swell and wind will be like up to six days in advance. We've included a star-rating system so that you can interpret the forecast more easily if you're new to reading these types of forecasts. 
 
-Point Break presents a simple, clean user interface for quick and easy navigation. Stop checking the weather every day - sign up, sit back, and allow Point Break to let you know when to grab your board and go.
+Point Break presents a simple, clean user interface for quick and easy navigation. Stop checking multiple weather sources every day. Sign up, sit back, and allow Point Break to let you know when to grab your board and go.
 
 ## Demo
 
 ![Home](https://github.com/hellocathleen/react-app/blob/cathleen/public/screenshots/Home.png?raw=true)
-* Register, log in, or view this week's forecasts.
+* Register, log in, or view this week's forecasts for 10 of Vancouver Island's best beaches.
 
 ![Forecast](https://github.com/hellocathleen/react-app/blob/cathleen/public/screenshots/Forecasts.png?raw=true)
-* Check the swell and wind conditions up to six days in advance for Vancouver Island beaches.
+* Check the swell and wind conditions up to six days in advance for Vancouver Island beaches. Click the arrow to expand the window and see the whole week's forecast.
 
 ![Register](https://github.com/hellocathleen/react-app/blob/cathleen/public/screenshots/Register.png?raw=true)
 * Register so you can receive notifications for your favorite Vancouver Island beaches.
