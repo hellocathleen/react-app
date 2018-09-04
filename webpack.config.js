@@ -15,7 +15,7 @@ module.exports = {
   // ],
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?https://point-break-server.herokuapp.com/',
+    `webpack-dev-server/client?https://point-break-server.herokuapp.com:${process.env.PORT}`,
     './src/index.jsx'
   ],
   output: {
