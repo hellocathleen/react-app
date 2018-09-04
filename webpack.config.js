@@ -10,6 +10,7 @@ const env = dotenv.config().parsed;
 // }, {});
 
 module.exports = env => {
+  const env = dotenv.config().parsed;
   console.log('NODE_ENV: ', env.NODE_ENV); // 'local'
   console.log('Production: ', env.production); // true
 return {
