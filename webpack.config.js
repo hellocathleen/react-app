@@ -4,15 +4,15 @@ var webpack = require('webpack');
  
 // const env = dotenv.config().parsed;
 
-// const envKeys = Object.keys(env).reduce((prev, next) => {
-//   prev[`process.env.${next}`] = JSON.stringify(env[next]);
-//   return prev;
-// }, {});
+const envKeys = Object.keys(process.env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(process.env[next]);
+  return prev;
+}, {});
 
 module.exports = {
-  // plugins: [
-  //   new webpack.DefinePlugin(envKeys)
-  // ],
+  plugins: [
+    new webpack.DefinePlugin(envKeys)
+  ],
   devtool: 'eval',
   entry: [
     `webpack-dev-server/client?https://point-break-server.herokuapp.com:${process.env.PORT}`,

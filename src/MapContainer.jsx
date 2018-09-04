@@ -1,7 +1,6 @@
 import React from "react"
 import { compose, withProps, withStateHandlers } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
-const dotenv = require('dotenv');
 
 
 const MyMapComponent = compose(
