@@ -10,9 +10,9 @@ var webpack = require('webpack');
 // }, {});
 
 module.exports = {
-  plugins: [
-    new webpack.DefinePlugin(envKeys)
-  ],
+  // plugins: [
+  //   new webpack.DefinePlugin(envKeys)
+  // ],
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?https://point-break-server.herokuapp.com/',
