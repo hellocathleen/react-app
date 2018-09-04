@@ -5,7 +5,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "reac
 
 const MyMapComponent = compose(
   withProps({
-    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${REACT_APP_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
+    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div className="map" style={{ height: `400px`, width:`90%`}} />,
     mapElement: <div style={{ height: `100%` }} />,
