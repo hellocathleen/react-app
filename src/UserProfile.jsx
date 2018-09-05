@@ -20,7 +20,7 @@ class UserProfile extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8080/user/${this.state.id}`, {
+    axios.get(`https://point-break-server.herokuapp.com/user/${this.state.id}`, {
      headers: {'Content-Type': 'application/json' },
       withCredentials: true
     }).then(res => {
@@ -31,7 +31,7 @@ class UserProfile extends Component {
     }).catch((res) => {
       console.log("error", res);
     }); 
-    axios.get(`http://localhost:8080/api/user/beaches`, {
+    axios.get(`https://point-break-server.herokuapp.com/api/user/beaches`, {
     withCredentials: true })
     .then((res) => {
       console.log(res)
@@ -44,12 +44,12 @@ class UserProfile extends Component {
 
   deleteBeach(event) {
     const beach = { id: event.target.name, userId: this.state.id }
-    axios.post(`http://localhost:8080/beach/delete`, beach, {
+    axios.post(`https://point-break-server.herokuapp.com/beach/delete`, beach, {
       headers: { 'Content-Type': 'application/json'},
       withCredentials: true
     }).then((results) => {
       console.log("Beaches deleted:", results)
-      axios.get(`http://localhost:8080/user/${this.state.id}`, {
+      axios.get(`https://point-break-server.herokuapp.com/user/${this.state.id}`, {
         headers: {'Content-Type': 'application/json' },
           withCredentials: true
         }).then(res => {
@@ -60,7 +60,7 @@ class UserProfile extends Component {
           console.log("error", res);
         }); 
 
-        axios.get(`http://localhost:8080/api/user/beaches`, {
+        axios.get(`https://point-break-server.herokuapp.com/api/user/beaches`, {
         withCredentials: true })
         .then((res) => {
           const beaches = res.data;
@@ -81,7 +81,7 @@ class UserProfile extends Component {
       }
     }
     const newBeaches = { favBeaches: favBeaches, userId: this.state.id }
-    axios.post(`http://localhost:8080/beach/add`, newBeaches, {
+    axios.post(`https://point-break-server.herokuapp.com/beach/add`, newBeaches, {
       headers: { 'Content-Type': 'application/json'},
       withCredentials: true
     }).then((results) => {
@@ -89,7 +89,7 @@ class UserProfile extends Component {
       if (results.data.includes("You already favorited")){
         alert(results.data)
       } else {
-        axios.get(`http://localhost:8080/user/${this.state.id}`, {
+        axios.get(`https://point-break-server.herokuapp.com/user/${this.state.id}`, {
           headers: {'Content-Type': 'application/json' },
           withCredentials: true
          }).then(res => {
@@ -100,7 +100,7 @@ class UserProfile extends Component {
          }).catch((res) => {
            console.log("error", res);
          })
-         axios.get(`http://localhost:8080/api/user/beaches`, {
+         axios.get(`https://point-break-server.herokuapp.com/api/user/beaches`, {
           withCredentials: true })
           .then((res) => {
             console.log(res)
@@ -125,7 +125,7 @@ class UserProfile extends Component {
     console.log(value)
     const notification = { setting: value }
     console.log(notification)
-    axios.post(`http://localhost:8080/api/user/notificationtype`, notification, {
+    axios.post(`https://point-break-server.herokuapp.com/api/user/notificationtype`, notification, {
       withCredentials: true
     }).then((results) => {
       console.log("results:", results);
@@ -142,7 +142,7 @@ class UserProfile extends Component {
     const value = event.target.value;
     console.log(value)
     const notification = { setting: value }
-    axios.post(`http://localhost:8080/api/user/notifications`, notification, {
+    axios.post(`https://point-break-server.herokuapp.com/api/user/notifications`, notification, {
       withCredentials: true
     }).then((results) => {
       console.log("results:", results);

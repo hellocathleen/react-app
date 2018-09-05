@@ -18,7 +18,7 @@ class Header extends Component {
   }
 
   handleSubmit() {
-    axios.post(`http://localhost:8080/logout`, {
+    axios.post(`https://point-break-server.herokuapp.com/logout`, {
      headers: {'Content-Type': 'application/x-www-form-urlencoded' },
       withCredentials: true
     }).then(res => {

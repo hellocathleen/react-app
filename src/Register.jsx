@@ -17,7 +17,7 @@ class Register extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8080/api/beaches`)
+    axios.get(`https://point-break-server.herokuapp.com/api/beaches`)
       .then((res) => {
         const beaches = res.data;
         this.setState({ beaches });
@@ -52,7 +52,7 @@ class Register extends Component {
                   notification_type: element.notification.value,
                   favBeaches: favBeaches}
 
-    axios.post(`http://localhost:8080/register`, user, {
+    axios.post(`https://point-break-server.herokuapp.com/register`, user, {
       headers: { 'Content-Type': 'application/json'},
       withCredentials: true
     })

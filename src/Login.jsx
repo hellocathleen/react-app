@@ -28,7 +28,7 @@ class Login extends Component {
       password: element.password.value
     }
     console.log(user)
-    axios.post(`http://localhost:8080/login`, user, {
+    axios.post(`https://point-break-server.herokuapp.com/login`, user, {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true
       })

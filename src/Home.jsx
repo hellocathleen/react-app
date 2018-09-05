@@ -13,7 +13,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/api/beaches')
+    axios.get('https://point-break-server.herokuapp.com/api/beaches')
       .then(response => {
         console.log(response);
         this.setState({ reports: response.data });
