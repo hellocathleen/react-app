@@ -7,6 +7,9 @@ Point Break offers simplified surf forecasts on their home page so you can have 
 
 Point Break presents a simple, clean user interface for quick and easy navigation. Stop checking multiple weather sources every day. Sign up, sit back, and allow Point Break to let you know when to grab your board and go.
 
+## Visit
+We've deployed our app on Heroku! Please go to https://point-break-lhl.herokuapp.com/ to view it.
+
 ## Team Members
 Point Break was completed as the final project for Lighthouse Labs, Sept. 2018. Team members who contributed to this project are:
 - Cathleen Melendez (Database, user registration and user profile)
@@ -31,20 +34,11 @@ Point Break was completed as the final project for Lighthouse Labs, Sept. 2018. 
 ![Profile](https://github.com/hellocathleen/react-app/blob/cathleen/public/screenshots/User%20Profile.png?raw=true)
 * Manage your favorite beaches with the simple add and delete capability, and change notification preference or turn notifications off in your user profile page. You can always come back and turn them back on when you're ready to receive surf notifcations again!
 
-## Getting Started
-
-1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information
-3. Install dependencies: `npm i`
-4. Run the server: `npm start`
-5. Run the back-end: [Point Break server](https://github.com/hellocathleen/VI-Surf-Buddy) 
-6. Visit `http://localhost:3000`
 
 ### Dependencies
 
 * React
 * React Google Maps
 * Axios
-* Webpack
 * [babel-loader](https://github.com/babel/babel-loader)
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
