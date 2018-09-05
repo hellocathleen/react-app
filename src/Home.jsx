@@ -33,9 +33,13 @@ class Home extends Component {
             <div className="circle" id="bell-circle">
               <img id="icon" src="public/images/bell.png"/>
               <span className="notification-hidden">
-              Activate Surf Alarms and get notifications
-              when the conditions will be just the way
-              you like them at your favorite spots.</span>
+                Never miss a day on the water again. Activate 
+                Surf Alarms and get notifications when the 
+                conditions will be just the way you like them 
+                at your favourite spots. Point Break sends 
+                you an email or sms message when our forecast 
+                predicts a day coming that you don’t want to miss.
+              </span>
             </div>
             <div className="circle" id="wave-circle">
               <img id="icon" src="public/images/waves.png"/>
@@ -45,14 +49,19 @@ class Home extends Component {
               Find frequently updated forecasts with wind direction
               and height, wave height and period. We've also included
               a rating system for those new to reading forecasts.
-              Have we missed
-              your favorite forecast source? Let us know!</span>
+              Have we missed your favorite forecast source? Let us know!</span>
             </div>
             <div className="circle" id="avatar-circle">
               <img id="icon" src="public/images/avatar.png"/>
               <span className="notification-hidden">
-              Add your own personal preferences to get forecasts and set
-              up Surf Alarms when you want.</span>
+                Register with Point Break to stay in the loop! Add your own 
+                personal preferences to get today’s and 
+                upcoming surf forecasts. Receive notifications 
+                for beaches of your choosing by selecting the 
+                beach on registration. Add or remove any beaches 
+                from your notifications email or sms at anytime 
+                by editing your profile.
+              </span>
             </div>
             <a id="down" href="#forecast">
             <span className="down-hidden">
