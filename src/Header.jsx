@@ -57,7 +57,6 @@ class Header extends Component {
             {registerLink}
             {profileLink}
             </div>
-            <link rel="icon" src="public/images/waves-icon.png"/>
             <h2><Link className="title" to='/'>POINT <br />BREAK</Link></h2>
           </nav>
       </header>
