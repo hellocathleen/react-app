@@ -42,6 +42,7 @@ class Report extends Component {
       <div className='forecast-card'>
         <div className='beach-info'>
           <h3>{ report.name }</h3>
+          <h5>Surf forecast</h5>
         </div>
         <div className='report'>
           <div className='beach-forecast'>
